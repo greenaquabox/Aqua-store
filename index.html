@@ -194,6 +194,31 @@
     .product button:hover {
       background-color: #1ebe5b;
     }
+    /* 🌐 Floating Social Buttons (Bottom-Right Corner) */
+.floating-social {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.float-btn img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover “pop” effect */
+.float-btn img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
   </style>
 </head>
 
@@ -321,5 +346,15 @@
       });
     });
   </script>
+  <!-- 🌐 Floating Social Media Buttons -->
+<div class="floating-social">
+  <a href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="float-btn">
+    <img src="instagram.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/YOUR_FACEBOOK_USERNAME" target="_blank" class="float-btn">
+    <img src="facebook.png" alt="Facebook">
+  </a>
+</div>
+
 </body>
 </html>
