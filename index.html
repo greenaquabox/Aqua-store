@@ -20,11 +20,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    header a {
+      text-decoration: none;
+      color: inherit;
     }
 
     header img {
       height: 60px;
       border-radius: 8px;
+      cursor: pointer;
     }
 
     nav ul {
@@ -48,6 +55,21 @@
 
     nav ul li a:hover {
       text-decoration: underline;
+    }
+
+    /* “All Products” Button */
+    .all-products-btn {
+      background-color: #ff9800;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .all-products-btn:hover {
+      background-color: #e68900;
     }
 
     /* ---------- SLIDING BANNER ---------- */
@@ -143,7 +165,6 @@
     .product button:hover {
       background-color: #1ebe5b;
     }
-
   </style>
 </head>
 
@@ -151,7 +172,11 @@
 
   <!-- HEADER -->
   <header>
-    <img src="logo.png" alt="Fortune Fishies Logo"> <!-- upload logo.png -->
+    <!-- Clickable Logo -->
+    <a href="https://yogeshteli.github.io/Aqua-store/" target="_blank">
+      <img src="logo.png" alt="Fortune Fishies Logo">
+    </a>
+
     <nav>
       <ul>
         <li><a href="#">Aqua Plants</a></li>
@@ -160,6 +185,11 @@
         <li><a href="#">Accessories</a></li>
       </ul>
     </nav>
+
+    <!-- "All Products" Button -->
+    <a href="https://yogeshteli.github.io/Aqua-store/" target="_blank" class="all-products-btn">
+      🛒 Fortune Fishies All Products
+    </a>
   </header>
 
   <!-- SLIDING ADVERTISEMENT BANNER -->
@@ -168,61 +198,7 @@
     <img src="banner2.jpg" alt="Banner 2">
   </div>
 
+  <!-- (keep your existing content below this) -->
   <h1>🌿 Welcome To Fortune Fishies</h1>
-
   <input type="text" id="searchInput" placeholder="Search products...">
-
-  <!-- PRODUCT LIST -->
-  <div class="product-list">
-    <div class="product">
-      <img src="product1.jpg" alt="Plant 1">
-      <h4>Amazon Sword Plant</h4>
-      <p>Beautiful aquatic plant for aquarium background.</p>
-      <button onclick="orderProduct('Amazon Sword Plant')">Order on WhatsApp</button>
-    </div>
-
-    <div class="product">
-      <img src="product2.jpg" alt="Plant 2">
-      <h4>Java Fern</h4>
-      <p>Hardy plant, easy to care and maintain.</p>
-      <button onclick="orderProduct('Java Fern')">Order on WhatsApp</button>
-    </div>
-
-    <div class="product">
-      <img src="product3.jpg" alt="Plant 3">
-      <h4>Anubias Nana</h4>
-      <p>Compact and great for midground display.</p>
-      <button onclick="orderProduct('Anubias Nana')">Order on WhatsApp</button>
-    </div>
-
-    <div class="product">
-      <img src="product4.jpg" alt="Plant 4">
-      <h4>Rotala Rotundifolia</h4>
-      <p>Vibrant red plant to add color to your tank.</p>
-      <button onclick="orderProduct('Rotala Rotundifolia')">Order on WhatsApp</button>
-    </div>
-  </div>
-
-  <script>
-    // 🔍 Search Filter
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('keyup', function() {
-      let filter = searchInput.value.toLowerCase();
-      let products = document.querySelectorAll('.product');
-      products.forEach(p => {
-        let name = p.querySelector('h4').textContent.toLowerCase();
-        p.style.display = name.includes(filter) ? '' : 'none';
-      });
-    });
-
-    // 💬 WhatsApp Order Button
-    function orderProduct(productName) {
-      const phone = "911234567890"; // 👉 replace with your WhatsApp number
-      const message = `Hi, I want to order ${productName}`;
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-    }
-  </script>
-
-</body>
-</html>
+  ...
